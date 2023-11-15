@@ -19,7 +19,9 @@ One day I was thinking to myself how hard it could be to create a folder structu
 ## Installation
 Actually, this project does not require anything else but your browser. Then, use your favorite browser to try it out. If you want to clone this repository, use the following command:
 
-> git clone https://github.com/vinicius-goncalves/folders-structure
+```git
+git clone https://github.com/vinicius-goncalves/folders-structure
+```
 
 ## How it works?
 Inside of ```assets``` directory, there is a file named ```structure.js``` that contains the logic of the whole structure. Let's go deeper to see some examples:
