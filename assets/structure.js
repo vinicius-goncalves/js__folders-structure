@@ -175,7 +175,6 @@ function defineEmptyContents(structure) {
             continue
         }
 
-
         if(file.content === undefined) {
             file.content = Types.Empty
             continue
