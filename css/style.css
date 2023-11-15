@@ -1,0 +1,89 @@
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons+Outlined");
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+[class*="material-icons"] { user-select: none; -webkit-user-select: none; }
+
+:root {
+
+    font-size: 17px;
+
+    --color0: #FFD966;
+    --color1: #868686;
+
+    --folder-structure-margin: 22.5px;
+}
+
+body {
+    font: 1rem Arial, sans-serif;
+    color: #FFFFFF;
+    background-color: #1A1B26;
+    overflow-x: hidden;
+}
+
+body > header {
+    text-align: center;
+    margin: 30px auto;
+    color: var(--color0);
+}
+
+header p {
+    color: var(--color1);
+    font-size: .9rem;
+}
+
+body .root {
+    margin: 5px 1px;
+    display: flex;
+    flex-flow: wrap column;
+}
+
+[data-folder="container"] [data-folder="details"],
+[data-file="container"] [data-file="details"] {
+    display: flex;
+    align-items: center;
+    padding: 5px;
+}
+
+
+[data-folder="sub-folder-container"] [data-folder="container"]  {
+    margin-left: var(--folder-structure-margin);
+}
+
+[data-folder="sub-folder-container"] [data-file="container"],
+[data-folder="sub-folder-container"] [data-folder="container"] {
+    margin-left: calc(var(--folder-structure-margin) * 1.1);
+}
+
+:is([data-file="name"], [data-folder="name"]) {
+    padding: 5px;
+}
+
+[data-folder="details"]:hover, [data-file="details"]:hover {
+    background-color: #232532;
+    cursor: pointer;
+}
+
+footer {
+    text-align: center;
+    margin: 15px;
+    font-size: .7rem;
+}
+
+footer a {
+    font-style: normal;
+    color: var(--color0);
+    text-decoration: none;
+    transition: color 200ms;
+}
+
+footer a:hover {
+    font-style: normal;
+    color: var(--color1);
+    text-decoration: none;
+}
+
+footer a:active {
+    font-style: normal;
+    color: #A6B3D9;
+    text-decoration: none;
+}
