@@ -1,7 +1,7 @@
 import EmptyFolder from './EmptyFolder.js'
 
 import { createIcon } from '../utils/methods.js'
-import { changeFolderVisibilityEvent, toggleFolderVisibility } from '../folder-manipulation.js'
+import { changeFolderVisibilityEvent, toggleFolderVisibility } from '../utils/folder-manipulation.js'
 
 const _folderWkMap = new WeakMap()
 
