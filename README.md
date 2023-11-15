@@ -1,5 +1,5 @@
 <h1 align="center">Folders Structure</h1>
-<p align="center">A project of studies when  recursive functions.</p>
+<p align="center">A study project using recursive functions and others data structures.</p>
 
 <div align="center">
 	<img alt="js logo" src="https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E">
