@@ -15,7 +15,8 @@ function changeFolderVisibilityEvent(event) {
     event.stopPropagation()
 
     const targetClicked = event.target
-    const isFile = targetClicked.closest('.file') !== null
+    const isFile = targetClicked.closest('[data-file]') !== null
+    console.log(isFile)
 
     if(isFile) {
         return
@@ -26,11 +27,15 @@ function changeFolderVisibilityEvent(event) {
     const subContentsIcon = closestFolder.querySelector('.sub-contents-icon')
     const subFolders = closestFolder.querySelector('[data-folder="sub-folder-container"]')
 
-    const newIcon = toggleFolderVisibility(subFolders) !== 'none'
+    if(!subFolders) {
+        return
+    }
+
+    const newExpandIcon = toggleFolderVisibility(subFolders) !== 'none'
         ? 'expand_more'
         : 'chevron_right'
 
-    subContentsIcon.setText(newIcon)
+    subContentsIcon.setText(newExpandIcon)
 }
 
 export { changeFolderVisibilityEvent, toggleFolderVisibility }
