@@ -17,7 +17,7 @@
 One day I was thinking to myself how hard it could be to create a folder structure system, like ```VS Code``` - and then one day I decided to start this, and I bet with you it was one of the best (and the coolest) project I've coded - and this was great because I could learn a lot of about recursion and data structure. In the future, I hope to refactor this project with TypeScript.
 
 ## Installation
-This project does not require anything else but your browser. Then, use your favorite browser to try it out. If you want to clone this repository, use the following command:
+Actually, this project does not require anything else but your browser. Then, use your favorite browser to try it out. If you want to clone this repository, use the following command:
 
 > git clone https://github.com/vinicius-goncalves/folders-structure
 
