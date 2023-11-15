@@ -4,7 +4,6 @@ function toggleFolderVisibility(folder) {
         ? 'none'
         : 'block'
 
-
     folder.style.setProperty('display', newVisibility)
 
     return newVisibility
@@ -16,7 +15,6 @@ function changeFolderVisibilityEvent(event) {
 
     const targetClicked = event.target
     const isFile = targetClicked.closest('[data-file]') !== null
-    console.log(isFile)
 
     if(isFile) {
         return

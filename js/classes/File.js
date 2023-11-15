@@ -1,4 +1,3 @@
-import { createIcon } from '../utils/methods.js'
 import EmptyFile from './EmptyFile.js'
 
 const _fileWkMap = new WeakMap()
