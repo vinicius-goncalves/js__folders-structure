@@ -3,11 +3,7 @@ import Types from '../js/utils/Types.js'
 const structure = [
     {
         type: Types.Folder,
-        name: 'empty-folder'
-    },
-    {
-        type: Types.Folder,
-        name: 'things',
+        name: 'utils',
         content: [
             {
                 type: Types.Folder,
@@ -15,7 +11,7 @@ const structure = [
                 content: [
                     {
                         type: Types.File,
-                        name: 'mongoose'
+                        name: 'mongodb'
                     },
                     {
                         type: Types.File,
@@ -45,7 +41,7 @@ const structure = [
                     },
                     {
                         type: Types.Folder,
-                        name: 'an amazing folder'
+                        name: 'an amazing empty folder'
                     }
                 ]
             }
@@ -56,24 +52,46 @@ const structure = [
         name: 'book.pdf'
     },
     {
+        type: Types.File,
+        name: 'windows-xp-wallpaper.jpg'
+    },
+    {
         type: Types.Folder,
-        name: 'folder1',
+        name: 'nested-folder',
         content: [
             {
                 type: Types.Folder,
-                name: 'folder2',
+                name: 'other-folder-here',
                 content: [
                     {
                         type: Types.Folder,
-                        name: 'folder3'
+                        name: 'promise-this-is-the-last-one',
+                        content: [
+                            {
+                                type: Types.Folder,
+                                name: 'do-not-trust-me',
+                                content: [
+                                    {
+                                        type: Types.Folder,
+                                        name: 'if-you-open-me-youll-have-to-learn-python >:)',
+                                        content: [
+                                            {
+                                                type: Types.File,
+                                                name: 'now-youll-need-to-learn-python-in-24-hours.txt'
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
                     },
                     {
                         type: Types.Folder,
-                        name: 'folder4'
+                        name: 'just-testing-a-folder-inside-other-inside-other'
                     },
                     {
                         type: Types.File,
-                        name: 'cool-file.txt'
+                        name: 'a-random-file.html'
                     }
                 ]
             }
@@ -81,23 +99,23 @@ const structure = [
     },
     {
         type: Types.Folder,
-        name: 'languages',
+        name: 'projects',
         content: [
             {
                 type: Types.Folder,
                 name: 'backend',
                 content: [
                     {
-                        type: Types.File,
-                        name: 'java.java'
-                    },
-                    {
                         type: Types.Folder,
-                        name: 'backend_frameworks',
+                        name: 'with-java',
                         content: [
                             {
-                                type: Types.Folder,
-                                name: 't'
+                                type: Types.File,
+                                name: 'GetYourName.java'
+                            },
+                            {
+                                type: Types.File,
+                                name: 'IPrint.java'
                             }
                         ]
                     },
@@ -108,12 +126,40 @@ const structure = [
                 name: 'frontend',
                 content: [
                     {
-                        type: Types.File,
-                        name: 'javascript.js',
+                        type: Types.Folder,
+                        name: 'with-js',
+                        content: [
+                            {
+                                type: Types.File,
+                                name: 'am-I-hired-if-i-have-either-a-pokedex-or-todo-list-with-three-weeks.doubt'
+                            },
+                            {
+                                type: Types.File,
+                                name: 'todo-list.js'
+                            },
+                            {
+                                type: Types.File,
+                                name: 'pokedex.js'
+                            }
+                        ]
                     },
                     {
-                        type: Types.File,
-                        name: 'typescript.ts'
+                        type: Types.Folder,
+                        name: 'with-ts',
+                        content: [
+                            {
+                                type: Types.File,
+                                name: 'types-studies.ts'
+                            },
+                            {
+                                type: Types.File,
+                                name: 'generics-classes.ts'
+                            },
+                            {
+                                type: Types.File,
+                                name: 'interfaces-studies.ts'
+                            }
+                        ]
                     }
                 ]
             }
@@ -129,19 +175,14 @@ function defineEmptyContents(structure) {
             continue
         }
 
+
         if(file.content === undefined) {
             file.content = Types.Empty
             continue
         }
 
         if(Array.isArray(file.content)) {
-
-            for(const { content } of file.content) {
-
-                if(Array.isArray(content)) {
-                    defineEmptyContents(content)
-                }
-            }
+            defineEmptyContents(file.content)
         }
     }
 
